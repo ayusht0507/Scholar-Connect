@@ -5,6 +5,242 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scholarships - ScholarConnect</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* === BASIC LAYOUT === */
+        .section {
+            padding: 32px 0 40px;
+        }
+
+        .section-alt {
+            background-color: #f9fafb;
+        }
+
+        .container {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+
+        .section-header p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+            padding: 18px 20px;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+        }
+
+        /* === CONNECTOR TO CATEGORIES === */
+        .connector {
+            margin-bottom: 16px;
+        }
+
+        .connector-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .connector-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .connector-top a {
+            font-size: 13px;
+            color: #4f46e5;
+            text-decoration: none;
+        }
+
+        .connector-top a:hover {
+            text-decoration: underline;
+        }
+
+        .connector-text {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 6px;
+        }
+
+        .category-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .category-pill {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid #e5e7eb;
+            font-size: 12px;
+            color: #4b5563;
+            text-decoration: none;
+            background-color: #ffffff;
+        }
+
+        .category-pill-primary {
+            border-color: #4f46e5;
+            background-color: #eef2ff;
+            color: #4338ca;
+        }
+
+        .category-pill:hover {
+            background-color: #f5f3ff;
+            border-color: #6366f1;
+            color: #4338ca;
+        }
+
+        /* === FILTER BAR === */
+        .search-box {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            column-gap: 10px;
+            align-items: center;
+        }
+
+        .search-box input,
+        .search-box select {
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid #d1d5db;
+            font-size: 14px;
+            color: #111827;
+        }
+
+        .search-box input::placeholder {
+            color: #9ca3af;
+        }
+
+        .search-box input:focus,
+        .search-box select:focus {
+            outline: none;
+            border-color: #4f46e5;
+            background-color: #f5f3ff;
+        }
+
+        .full-width-on-mobile {
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 14px;
+        }
+
+        /* === GRID & SCHOLARSHIP CARDS === */
+        .grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .scholarship-card h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: #111827;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+
+        .amount {
+            font-size: 16px;
+            font-weight: 600;
+            color: #16a34a;
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            background-color: #e5e7eb;
+            color: #374151;
+        }
+
+        .badge-green {
+            background-color: #dcfce7;
+            color: #15803d;
+        }
+
+        .badge-blue {
+            background-color: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: #4b5563;
+        }
+
+        .detail-list li {
+            margin-bottom: 4px;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-primary-sm,
+        .btn-outline-sm {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary-sm {
+            background-color: #4f46e5;
+            color: #ffffff;
+            border-color: #4f46e5;
+        }
+
+        .btn-primary-sm:hover {
+            background-color: #4338ca;
+            border-color: #4338ca;
+        }
+
+        .btn-outline-sm {
+            background-color: #ffffff;
+            color: #4b5563;
+            border-color: #d1d5db;
+        }
+
+        .btn-outline-sm:hover {
+            background-color: #eef2ff;
+            border-color: #4f46e5;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -16,7 +252,7 @@
             </div>
 
             <nav class="nav-links">
-                <a href="index.html#home">Home</a>
+                <a href="index.html">Home</a>
                 <a href="scholarships.html">Scholarships</a>
                 <a href="categories.html">Categories</a>
                 <a href="how-it-works.html">How it works</a>
@@ -34,12 +270,31 @@
     <section class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <h2>All scholarships</h2>
-                <p>Filter by level, type and category to find the best match.</p>
+                <h2>Scholarships connected to your categories</h2>
+                <p>Start from a category, then refine the list using filters.</p>
             </div>
 
-            <!-- Simple filter bar -->
-            <div class="card" style="margin-bottom: 1.5rem;">
+            <!-- Simple connector showing relation to Categories page -->
+            <div class="card connector">
+                <div class="connector-top">
+                    <p class="connector-title">Quick categories</p>
+                    <a href="categories.html">View full categories page →</a>
+                </div>
+                <p class="connector-text">
+                    These tags match the categories you saw earlier. Click one to focus your search.
+                </p>
+                <div class="category-strip">
+                    <span class="category-pill category-pill-primary">Merit & Olympiads</span>
+                    <span class="category-pill">Engineering & technology</span>
+                    <span class="category-pill">Commerce & arts</span>
+                    <span class="category-pill">Research & higher studies</span>
+                    <span class="category-pill">Women-focused</span>
+                    <span class="category-pill">Need-based support</span>
+                </div>
+            </div>
+
+            <!-- Filter bar -->
+            <div class="card" style="margin-bottom: 16px;">
                 <form class="search-box">
                     <input type="text" placeholder="Search by name, course or level" />
 

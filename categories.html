@@ -5,13 +5,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Categories - ScholarConnect</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* CENTER HERO SECTION */
+.hero-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.hero-text {
+    width: 70%;
+}
+
+.hero-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 24px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* BROWSE BY LEVEL - TITLES CENTERED */
+.section-title-left {
+    font-size: 26px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #111827;
+}
+
+.section-subtitle-left {
+    font-size: 14px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* STRIP WRAPPER */
+.level-strip {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* CARD STYLE */
+.level-card {
+    text-decoration: none;
+    display: block;
+    width: 220px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.2s ease;
+    text-align: center;
+}
+
+/* HOVER EFFECT */
+.level-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+    border-color: #6366f1;
+    background-color: #f5f3ff;
+}
+
+/* TITLES + TEXT */
+.level-title {
+    font-size: 18px;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+.level-desc {
+    font-size: 14px;
+    line-height: 20px;
+    color: #6b7280;
+}
+
+/* ===== EXPLORE CATEGORIES ===== */
+
+.categories-main {
+    margin-top: 40px;
+}
+
+/* Section title + subtitle */
+.categories-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+.categories-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Grid layout */
+.categories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+/* Card style */
+.cat-card {
+    width: 30%;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.2s ease;
+    position: relative;
+}
+
+/* top gradient bar */
+.cat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, #4f46e5, #8b5cf6);
+}
+
+/* Hover animation */
+.cat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.13);
+    border-color: #6366f1;
+}
+
+/* Chip on top */
+.cat-top-row {
+    margin-bottom: 10px;
+}
+
+.cat-chip {
+    background-color: #eef2ff;
+    color: #4338ca;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* Titles & text */
+.cat-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.cat-text {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+
+.cat-mini {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+/* Link */
+.cat-link {
+    font-size: 14px;
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+.cat-link:hover {
+    text-decoration: underline;
+}
+
+
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navbar (same) -->
     <header class="navbar">
         <div class="container nav-inner">
             <div class="logo">
-                 <span class="logo-icon"><a href="#"><img src="ASSETS/LOGO.jpg" alt="LOGO" style="width: 70px;"></a></span>
+                 <span class="logo-icon">
+                    <a href="#"><img src="ASSETS/LOGO.jpg" alt="LOGO" style="width: 70px;"></a>
+                 </span>
                 <span class="logo-text"><a href="#">ScholarConnect</a></span>
             </div>
 
@@ -20,7 +212,7 @@
                 <a href="scholarships.html">Scholarships</a>
                 <a href="categories.html">Categories</a>
                 <a href="how-it-works.html">How it works</a>
-                <a href="about.html">About</a>
+                <a href="support.html">Support</a>
             </nav>
 
             <div class="nav-actions">
@@ -30,121 +222,149 @@
         </div>
     </header>
 
-    <!-- Categories Hero -->
+    <!-- HERO -->
     <section class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Browse by level & category</h2>
-                <p>
-                    Start from where you are in your education journey and discover relevant scholarships.
+        <div class="container hero-row">
+            <div class="hero-text">
+                <h1 class="hero-title">Choose your path to the right scholarship</h1>
+                <p class="hero-subtitle">
+                    Start with your current level of study and quickly find categories that match 
+                    your goals, background and financial needs.
                 </p>
-            </div>
-        </div>
     </section>
 
-    <!-- Main Categories -->
+    <!-- BROWSE BY LEVEL STRIP -->
     <section class="section">
         <div class="container">
-            <div class="grid grid-4">
-                <div class="card category-card">
-                    <div class="cat-icon">🎒</div>
-                    <h3>Class 9–12</h3>
-                    <p>Olympiads, merit and need-based support for school students.</p>
-                    <a href="scholarships.html" class="link">View scholarships</a>
-                </div>
+            <h2 class="section-title-left">Browse by level</h2>
+            <p class="section-subtitle-left">
+                Quickly jump into scholarships aligned with your current education stage.
+            </p>
 
-                <div class="card category-card">
-                    <div class="cat-icon">🎓</div>
-                    <h3>Undergraduate</h3>
-                    <p>Support for engineering, science, arts, commerce and professional courses.</p>
-                    <a href="scholarships.html" class="link">View scholarships</a>
-                </div>
+            <div class="level-strip">
+                <a href="scholarships.html" class="level-card">
+                    <h3 class="level-title">Class 9–12</h3>
+                    <p class="level-desc">Olympiads, board exam support and early merit rewards.</p>
+                </a>
 
-                <div class="card category-card">
-                    <div class="cat-icon">📚</div>
-                    <h3>Postgraduate</h3>
-                    <p>Scholarships for masters, M.Tech, MBA and research programs.</p>
-                    <a href="scholarships.html" class="link">View scholarships</a>
-                </div>
+                <a href="scholarships.html" class="level-card">
+                    <h3 class="level-title">Undergraduate</h3>
+                    <p class="level-desc">Engineering, science, arts, commerce and professional streams.</p>
+                </a>
 
-                <div class="card category-card">
-                    <div class="cat-icon">💡</div>
-                    <h3>Special category</h3>
-                    <p>For differently abled, single parent, women, and others.</p>
-                    <a href="scholarships.html" class="link">View scholarships</a>
-                </div>
+                <a href="scholarships.html" class="level-card">
+                    <h3 class="level-title">Postgraduate</h3>
+                    <p class="level-desc">Masters, M.Tech, MBA and research-focused programs.</p>
+                </a>
+
+                <a href="scholarships.html" class="level-card">
+                    <h3 class="level-title">Special category</h3>
+                    <p class="level-desc">Women, differently abled, single parent and more.</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Category types (Merit / Need / Govt) -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2>Types of scholarships</h2>
-                <p>Understand the different kinds of support available.</p>
-            </div>
-
-            <div class="grid grid-3">
-                <div class="card">
-                    <h3>Merit-based</h3>
-                    <p style="color:#6b7280;">
-                        Awarded on the basis of marks, ranks or achievements. Ideal for students 
-                        with strong academic or co-curricular performance.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Need-based</h3>
-                    <p style="color:#6b7280;">
-                        Focused on students from low-income families. Usually requires income proof 
-                        and basic academic performance.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Government & institutional</h3>
-                    <p style="color:#6b7280;">
-                        Offered by central/state governments, universities and NGOs with specific 
-                        eligibility and benefits.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div>
-                <div class="logo footer-logo">
-                    <span class="logo-icon">🎓</span>
-                    <span class="logo-text">ScholarConnect</span>
-                </div>
-                <p class="footer-text">
-                    Helping students find the right financial support at the right time.
+    <!-- MAIN CATEGORIES LAYOUT -->
+            <div class="categories-main">
+                <h2 class="categories-title">Explore categories</h2>
+                <p class="categories-subtitle">
+                    These categories group scholarships by how they are awarded or who they are meant for.
                 </p>
-            </div>
-            <div>
-                <h4>Explore</h4>
-                <a href="scholarships.html">Scholarships</a>
-                <a href="categories.html">Categories</a>
-                <a href="how-it-works.html">How it works</a>
-            </div>
-            <div>
-                <h4>Support</h4>
-                <a href="support.html">Help center</a>
-                <a href="support.html">FAQs</a>
-                <a href="support.html">Contact</a>
-            </div>
-            <div>
-                <h4>Legal</h4>
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
-            </div>
-        </div>
 
-        <div class="footer-bottom">
-            <p>© 2025 ScholarConnect. All rights reserved.</p>
+                <div class="categories-grid">
+                    <div class="cat-card">
+                        <div class="cat-top-row">
+                            <span class="cat-chip">Merit</span>
+                        </div>
+                        <h3 class="cat-title">Olympiads & rank-based</h3>
+                        <p class="cat-text">
+                            For students with top performance in Olympiads, entrance tests, board exams 
+                            or competitive exams.
+                        </p>
+                        <p class="cat-mini">
+                            Ideal for: High scorers in Class 9-12 and UG students.
+                        </p>
+                        <a href="scholarships.html" class="cat-link">View scholarships</a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-top-row">
+                            <span class="cat-chip">Engineering</span>
+                        </div>
+                        <h3 class="cat-title">Engineering & technology</h3>
+                        <p class="cat-text">
+                            Scholarships for B.Tech, B.E., polytechnic and related technical degrees 
+                            across different institutions.
+                        </p>
+                        <p class="cat-mini">
+                            Includes: Govt, private and CSR-based schemes.
+                        </p>
+                        <a href="scholarships.html" class="cat-link">View scholarships</a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-top-row">
+                            <span class="cat-chip">Commerce & arts</span>
+                        </div>
+                        <h3 class="cat-title">Commerce, arts & management</h3>
+                        <p class="cat-text">
+                            Support for B.Com, BA, BBA, BBM and other non-technical courses in 
+                            universities and colleges.
+                        </p>
+                        <p class="cat-mini">
+                            Focus: Consistent performance and future potential.
+                        </p>
+                        <a href="scholarships.html" class="cat-link">View scholarships</a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-top-row">
+                            <span class="cat-chip">Research</span>
+                        </div>
+                        <h3 class="cat-title">Research & higher studies</h3>
+                        <p class="cat-text">
+                            Fellowships and grants for masters and PhD students in science, 
+                            technology and social sciences.
+                        </p>
+                        <p class="cat-mini">
+                            Often includes: Stipends, fee waivers and travel.
+                        </p>
+                        <a href="scholarships.html" class="cat-link">View scholarships</a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-top-row">
+                            <span class="cat-chip">Women</span>
+                        </div>
+                        <h3 class="cat-title">Women-focused schemes</h3>
+                        <p class="cat-text">
+                            For girl students and women in STEM, management and research at 
+                            various levels of study.
+                        </p>
+                        <p class="cat-mini">
+                            Offered by: Govt, NGOs, corporates and institutes.
+                        </p>
+                        <a href="scholarships.html" class="cat-link">View scholarships</a>
+                    </div>
+
+                    <div class="cat-card">
+                        <div class="cat-top-row">
+                            <span class="cat-chip">Need-based</span>
+                        </div>
+                        <h3 class="cat-title">Income-based & support</h3>
+                        <p class="cat-text">
+                            For students from low-income families to help cover tuition, books, 
+                            hostel and other study costs.
+                        </p>
+                        <p class="cat-mini">
+                            Common requirement: Income certificate and basic academic record.
+                        </p>
+                        <a href="scholarships.html" class="cat-link">View scholarships</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 </body>
 </html>
